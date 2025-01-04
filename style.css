@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+
+}
+header{
+    height: 10%;
+    width: 100%;
+    background-color: rgba(209, 205, 205, 0.592);
+    display: flex;
+    justify-content: space-between;
+    padding: 0% 10% 0% 10%;
+    align-items: center;
+    font-size: 30px;
+}
+#search_bar{
+    width: max-content;
+}
+header #search_bar input{
+    height: 40px;
+    width: 800px;
+    padding-left: 10px;
+    font-size: 15px;
+    font-weight: 700;
+
+}
+main{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main #task{
+    width: 80%;
+    height: 100%;
+    background-color: rgba(209, 205, 205, 0.592);
+    border: 1px black solid;
+   
+}
+footer{
+    height: 10%;
+    width: 100%;
+    background-color: rgba(209, 205, 205, 0.592);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer input{
+    height: 40px;
+    width: 80%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding-left: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+footer i{
+    position: relative;
+    right: 50px;
+    font-size: 25px;
+    bottom: 9px;
+}
+#task ul{
+margin-left: 30px;
+margin-top: 30px;
+text-decoration: none;
+list-style: none;
+display: flex;
+
+flex-direction: column;
+justify-content: center;
+}
+#task ul li{
+    height: 30px;
+    width: 80%;
+    border: 1px black solid;
+    margin-bottom: 6px;
+    background-color: white;
+    font-size: 20px;
+    padding-left: 20px;
+    position: relative;
+
+}
+#task ul i{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+}
+#task p {
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50% );
+}
+
+
+
