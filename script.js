@@ -30,6 +30,11 @@ function loadTasks(){
 
       const deleteButton = document.createElement("i");
       deleteButton.className = "fa-solid fa-trash";
+      const editItem = document.createElement("i");
+      editItem.className = "fa-solid fa-pen";
+      deleteButton.style.position = "absolute"; // Positioning the button absolutely
+deleteButton.style.left = "1200px";
+
       deleteButton.addEventListener("click", function () {
         arrayList.splice(index, 1);
         newItem.remove();
@@ -37,7 +42,29 @@ function loadTasks(){
         checkifEmpty();
         loadTasks();
       });
+      editItem.addEventListener("click",function(){
+        const taskText = newItem.firstChild;
+        const inputField = document.createElement("input");
+        inputField.type = "text";
+        inputField.value = taskText.textContent;
+        newItem.innerHTML ="";
+        newItem.appendChild(inputField);
+        inputField.focus();
+
+        inputField.addEventListener("keypress",function(event){
+          if(event.key==="Enter"){
+            const updateTask = inputField.value.trim();
+            if(updateTask){
+              newItem.textContent = updateTask;
+              arrayList[index].task = updateTask;
+              save_to_localStorage();
+              loadTasks();
+            }
+          }
+        })
+      })
       newItem.appendChild(deleteButton);
+      newItem.appendChild(editItem)
       ul.appendChild(newItem);
     });
    
